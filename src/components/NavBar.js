@@ -1,11 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css"
+import { CartIcon } from "./CartIcon";
 
 export function NavBar() {
     return (
         <nav>
             <ul>
+                <li>
+                    <NavLink to="/home" activeClassName="activeLink">
+                        Home
+                    </NavLink>
+                    <hr />
+                </li>
                 <li>
                     <NavLink to="/productos" activeClassName="activeLink">
                         Productos
@@ -14,7 +21,13 @@ export function NavBar() {
                 </li>
                 <li>
                     <NavLink to="/carrito" activeClassName="activeLink">
-                     Carrito
+                        <CartIcon />
+                    </NavLink>
+                    <hr />
+                </li>
+                <li>
+                    <NavLink to="/contacto" activeClassName="activeLink">
+                        Contacto
                     </NavLink>
                     <hr />
                 </li>               

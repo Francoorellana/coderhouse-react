@@ -1,7 +1,7 @@
 nav ul {
     display: flex;
     list-style: none;
-    background-color: #F3E2A9;
+    background-color: #e3f2fd;
     margin: 0;
     padding: 2% 2% 0;
     top: 0;
@@ -12,7 +12,7 @@ nav ul {
 
 ul li a {
     text-decoration: none;
-    color: black;
+    color: #2196f3;
     font-weight: bold;
     font-size: 1.3rem;
 }
@@ -26,6 +26,6 @@ hr {
 
 .activeLink~hr{
     height: 3px;
-    background-color: black;
+    background-color: #0d47a1;
     width: 100%;
 }
