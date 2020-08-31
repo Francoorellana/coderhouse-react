@@ -2,15 +2,14 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
-import { Greeting } from "./components/Home"
-
+import { Greeting } from "./components/Home";
+import { Contador } from "./components/ItemCount"
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
-        <Switch>
-          
+        <Switch>       
           <Route exact path="/home">
             <span className="inner-text">Home</span>
           </Route>
@@ -23,8 +22,9 @@ function App() {
           <Route exact path="/contacto">
             <span className="inner-text">Contacto</span>
           </Route>
-          <Greeting nombre="Juan" apellido="Jouglard" />
-      </Switch>
+          <Greeting nombre="Bakery by Roo" />
+      </Switch> 
+      <Contador ini="0" min="0" max="5" producto="Torta Oreo" />
     </BrowserRouter>
   );
 }
