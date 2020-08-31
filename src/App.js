@@ -24,7 +24,7 @@ function App() {
           </Route>
           <Greeting nombre="Bakery by Roo" />
       </Switch> 
-      <Contador ini="0" min="0" max="5" producto="Torta Oreo" />
+      <Contador ini={0} min={0} max={5} producto="Torta Oreo" />
     </BrowserRouter>
   );
 }

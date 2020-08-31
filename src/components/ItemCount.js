@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./Estilos.css";
 
 export function Contador(props){
-    let [contador, setContador] = useState(parseInt(props.ini));
+    let [contador, setContador] = useState(props.ini);
 
     let sumar = () => {
-        if (contador >= parseInt(props.max)) {
+        if (contador >= props.max) {
             alert('Superaste el limite de compra por menor. Contactate conmigo para precio por mayor.');
         } else {
             setContador((prevcontador) => {
@@ -15,7 +15,7 @@ export function Contador(props){
     };
 
     let restar = () => {
-        if (contador === parseInt(props.min)) {
+        if (contador === props.min) {
             alert('Todavia no agregaste productos');
         } else {
             setContador((prevcontador) => {
@@ -30,6 +30,7 @@ export function Contador(props){
         <div className="contador">{contador}</div>
         <button type="button" onClick={restar} >-</button>
         <button type="button" onClick={sumar} >+</button>
+        <button type="button">Comprar</button>
         </div>
     );
 }
