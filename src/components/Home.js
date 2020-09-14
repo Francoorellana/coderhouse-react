@@ -4,12 +4,18 @@ import { Items } from "./Items";
 
 export function Greeting(props) {
     return (
-        <h1>
-            Bienvenido a {props.nombre}
-            <Items />            
-        </h1>
+        <>
+        <h3>Bienvenido a {props.nombre}</h3>
+        <img src="./Imagenes/logo.jpg" />
+        </>
+        
     );
 }
 
+export function Productos() {
+    return (
+        <Items />        
+    );
+}
 
 

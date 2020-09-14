@@ -1,20 +1,33 @@
 import React, { useState } from "react";
-import { ItemList } from "./ItemList";
+import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, CardMedia, Button } from '@material-ui/core';
+import { DetalleProducto } from "./ItemDetail";
+
 
 function obtenerProductos() {                                                                                          
   return new Promise((resolve, reject) => {                            
       setTimeout(() => {                                                 
         resolve([
-          { id: "01", name: "Torta Brownie", description: "Bizcocho de chocolate con manteca, nueces, relleno de dulce de leche", stock: 5 },
-          { id: "02", name: "Budin de Naranja", description: "Bizcocho con sabor a naranja y chips de chocolate", stock: 5 },
-          { id: "03", name: "Chipa x 6", description: "Seis chipá rellenos de queso", stock: 6 },
+          { id: "01", name: "Alfajor Maicena", stock: 5, img: "./Imagenes/alfajorDDL.jpg" },
+          { id: "02", name: "Budin de Naranja", stock: 5, img: "./Imagenes/budinnaranja.jpg" },
+          { id: "03", name: "Chipa x 6", stock: 6, img: "./Imagenes/chipax6.jpg" },
         ]);                                                              
       }, 2000);                                                          
     });                                                                  
  }   
 
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 200,
+  },
+  media: {
+    height: 200,
+  },
+});
+
 export function Items() {
-   const [productos, setProductos] = useState([]);               
+   const [productos, setProductos] = useState([]);   
+   const classes = useStyles();            
      
    obtenerProductos()
      .then((productos) => {
@@ -23,14 +36,24 @@ export function Items() {
      
     if (productos) {
       return (
-        <ul>
+        <div className="tarjeta" >
           {productos.map((producto) => (
-            <ItemList producto={producto} />
-          ))}
-        </ul>  
+              <Card >
+                <CardMedia className={classes.media} image={producto.img} />
+                  <CardContent>
+                    <h2> {producto.name} </h2>
+                    <p> <DetalleProducto /> </p>
+                  </CardContent>
+                  <Button size="small" color="primary">
+                    Comprar
+                  </Button>
+                  <Button size="small" color="primary">
+                    Agregar al carrito
+                  </Button>
+              </Card>
+            ))
+          }       
+        </div>
       );
     } 
   }
-  
-
-

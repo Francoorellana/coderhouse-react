@@ -35,39 +35,3 @@ export function Contador(props){
     );
 }
 
-
-
-/*class Contador extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            inicio: 0,
-            min: 0,
-            maximo: 15,
-        }
-    }
-
-    if (inicio) {
-        alert("Aun no ha seleccionado productos")
-    }
-
-    sumar = () => {
-        this.setState({
-            inicio: this.state.inicio +1,
-        });
-      }
-    restar = () => {
-        this.setState({
-          inicio: this.state.inicio -1,
-        });
-      }
-
-    render () {
-        return(
-          
-        )
-    }
-}
-
-export default Contador;*/

@@ -1,3 +1,4 @@
+
 nav ul {
     display: flex;
     list-style: none;
@@ -49,3 +50,11 @@ button {
     align-items: center;
     font-size: 16px;
 }
+
+.tarjeta {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+}
+

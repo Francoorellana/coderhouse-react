@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
-import { Greeting } from "./components/Home";
-import { Contador } from "./components/ItemCount"
+import { Greeting, Productos } from "./components/Home";
+import { Contador } from "./components/ItemCount";
 
 function App() {
   return (
@@ -11,20 +11,19 @@ function App() {
       <NavBar />
         <Switch>       
           <Route exact path="/home">
-            <span className="inner-text">Home</span>
+            <Greeting nombre="Bakery by Ro" />
           </Route>
           <Route path="/productos">
-            <span className="inner-text">Productos</span>
+            <Productos />
+            <Contador ini={0} min={0} max={5} producto="Torta Oreo" />
           </Route>
           <Route path="/carrito">
-            <span className="inner-text">Carrito</span>
+            <span className="inner-text">Aun no agrego nada</span>
           </Route>
           <Route exact path="/contacto">
             <span className="inner-text">Contacto</span>
-          </Route>
-          <Greeting nombre="Bakery by Roo" />
-      </Switch> 
-      <Contador ini={0} min={0} max={5} producto="Torta Oreo" />
+          </Route>         
+      </Switch>
     </BrowserRouter>
   );
 }
