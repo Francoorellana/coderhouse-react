@@ -1,7 +1,5 @@
 import React from "react";
 import { Items } from "./Items";
-import  ItemDetailContainer from "./ItemDetailContainer";
-
 
 export function Greeting(props) {
     return (
@@ -14,11 +12,8 @@ export function Greeting(props) {
 }
 
 export function Productos() {
-    return (
-        <>
+    return (        
         <Items />  
-        <ItemDetailContainer />      
-        </>
     );
 }
 

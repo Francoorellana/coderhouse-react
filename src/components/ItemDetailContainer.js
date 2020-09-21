@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
         return <div><CircularProgress /></div>
     } else {
         return <>
-        {item.map(item=> <ItemDetail nombre={item.name} precio={item.precio} descripcion={item.detalle} img={item.img}/>)}
+        {item.map(item=> <ItemDetail  id={item.id} nombre={item.name} precio={item.precio} descripcion={item.detalle} img={item.img}/>)}
         </>
     };
 }   

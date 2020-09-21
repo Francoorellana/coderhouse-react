@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, CardMedia, Button } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 
 
 export function Data() {
@@ -36,16 +37,19 @@ export function Items() {
     if (productos) {
       return (
         <div className="tarjeta" >
-          {productos.map((producto) => (
-              <Card  >
-                <CardMedia className={classes.media} image={producto.img} />
-                  <CardContent>
-                    <h2> {producto.name} </h2>
-                  <Button color="primary" variant="contained"  >
-                    Ver mas
-                  </Button>                    
-                  </CardContent>                  
-              </Card>
+          {productos.map((producto, to) => (
+              <NavLink to={`/productos/${producto.id}`} >
+                <Card  >
+                  <CardMedia className={classes.media} image={producto.img} />
+                    <CardContent>
+                      <h2> {producto.name} </h2>
+                    <Button color="primary" variant="contained"  >
+                      Ver mas
+                    </Button>                    
+                    </CardContent>                  
+                </Card>
+              </NavLink> 
+
             ))
           }
         </div>
