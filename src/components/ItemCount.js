@@ -26,11 +26,9 @@ export function Contador(props){
 
     return (
         <div>
-        <p className="producto"> {props.producto} </p>
         <div className="contador">{contador}</div>
         <button type="button" onClick={restar} >-</button>
         <button type="button" onClick={sumar} >+</button>
-        <button type="button">Comprar</button>
         </div>
     );
 }

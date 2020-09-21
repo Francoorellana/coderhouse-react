@@ -1,5 +1,6 @@
 import React from "react";
 import { Items } from "./Items";
+import  ItemDetailContainer from "./ItemDetailContainer";
 
 
 export function Greeting(props) {
@@ -14,7 +15,10 @@ export function Greeting(props) {
 
 export function Productos() {
     return (
-        <Items />        
+        <>
+        <Items />  
+        <ItemDetailContainer />      
+        </>
     );
 }
 

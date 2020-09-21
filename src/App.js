@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { Greeting, Productos } from "./components/Home";
-import { Contador } from "./components/ItemCount";
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
             <Greeting nombre="Bakery by Ro" />
           </Route>
           <Route path="/productos">
-            <Productos />
-            <Contador ini={0} min={0} max={5} producto="Torta Oreo" />
+            <Productos />            
           </Route>
           <Route path="/carrito">
             <span className="inner-text">Aun no agrego nada</span>

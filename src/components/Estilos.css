@@ -32,9 +32,10 @@ hr {
 }
 
 button {
-    border: 2px solid #333;
-    border-radius: 6px;
-    padding: 16px;    
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 5px;    
+    margin: 2px;
 }
 .producto {
     font-size: 16px;
@@ -43,12 +44,13 @@ button {
 }
 .contador {
     box-sizing: border-box;
-    width: 25px;
+    width: 10px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    margin-left: 5px;
 }
 
 .tarjeta {
@@ -58,3 +60,13 @@ button {
     grid-gap: 25px;
 }
 
+.comprar {
+    box-sizing: border-box;
+    width: 10px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 5px;
+}
