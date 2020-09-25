@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { ItemDetail } from "./ItemDetail";
-import { Data } from "./Items";
+import { ItemDetail } from './ItemDetail';
 
-const ItemDetailContainer = () => {
+
+const ItemDetailContainer = (props) => {
     const [item, setItem] = useState([]);
     const [cargando, setCargando] = useState(false);
-    
+            
     useEffect(() => {
         setCargando(true);
-        Data()
-            .then(resolve => {
-                setItem(resolve);
-                setCargando(false);
-            })
-    }, [])
-    
-    useEffect(() => {
-        console.log(item)
-    }, [item])
+        setTimeout(() => {
+            setItem(props.data);
+            setCargando(false);
+            }, 3000);
+    }, []);
 
     if(cargando){
         return <div><CircularProgress /></div>
     } else {
-        return <>
-        {item.map(item=> <ItemDetail  id={item.id} nombre={item.name} precio={item.precio} descripcion={item.detalle} img={item.img}/>)}
+        return <>  
+        <div className="tarjeta" >
+        {item.map(producto => (
+           <ItemDetail key={producto.id} data={producto} />
+          ))
+        }
+        </div>
         </>
-    };
+    };  
 }   
 
 export default ItemDetailContainer;
