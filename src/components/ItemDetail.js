@@ -1,23 +1,38 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, CardMedia, Button } from '@material-ui/core';
 import { Contador } from './ItemCount';
 
-function ItemDetail({ data }) {
-  const { id } = useParams();
+const useStyles = makeStyles({
+    root: {
+      width: 600,
+    },
+    media: {  
+      height: 200,
+      width: 400,
+      margin: 10,
+    },
+  });
 
+
+function ItemDetail({ producto }) {
+    const classes = useStyles();
     return (
-        <>
-        <img 
-            alt='product'
-            src={data[`${id - 1}`].img}
-        /> 
-        <h2> Producto: {data[`${id - 1}`].name}</h2>
-        <p> Detalle: {data[`${id - 1}`].detalle} </p>   
-        <p> Precio: {data[`${id - 1}`].precio} </p> 
-        <Contador ini={0} min={0} max={5} />
-        <button onClick={() => alert("Va a comprar este producto")}>Comprar</button>
-        </>
+        <div>
+            <Card  >
+                <CardMedia className={classes.media} image={producto.img} />
+                <CardContent>
+                <h2> {producto.name} </h2>
+                <h3> {producto.detalle} </h3>
+                <h4> {producto.precio} </h4>
+                <Contador ini={0} min={0} max={5} />
+                <Button variant="contained" color="primary" onClick={() => alert("Va a comprar este producto")}>Comprar</Button>                 
+                </CardContent>                  
+            </Card>        
+       </div >
     );
 }
 
 export default ItemDetail;
+
+

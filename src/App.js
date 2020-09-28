@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { Greeting } from "./components/Home";
 import api from "./components/api";
-import ItemDetail from './components/ItemDetail';
 import { Items } from './components/Items';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Greeting nombre="Bakery by Ro" />
           </Route>
           <Route path='/productos/:id'>
-            <ItemDetail data={api} />
+            <ItemDetailContainer item={api} />
           </Route>      
           <Route exact path="/productos">
             <Items data={api} />        
