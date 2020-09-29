@@ -28,13 +28,3 @@ const ItemDetailContainer = (props) => {
 }   
 
 export default ItemDetailContainer;
-
-/*
-<img 
-alt='product'
-src={item[`${id - 1}`].img}
-/> 
-<h2> Producto: {item[`${id - 1}`].name}</h2>
-<p> Detalle: {item[`${id - 1}`].detalle} </p>   
-<p> Precio: {item[`${id - 1}`].precio} </p> 
-*/

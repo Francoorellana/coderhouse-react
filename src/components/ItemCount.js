@@ -25,8 +25,8 @@ export function Contador(props){
     }
 
     return (
-        <div>
-        <div className="contador">{contador}</div>
+        <div  >
+        <span  className="contador" onClick={props.funcion(contador)} >{contador}</span>
         <button type="button" onClick={restar} >-</button>
         <button type="button" onClick={sumar} >+</button>
         </div>
