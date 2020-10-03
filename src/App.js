@@ -6,6 +6,7 @@ import { Greeting } from "./components/Home";
 import api from "./components/api";
 import { Items } from './components/Items';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { CartProvider } from './context/cartContext';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/home" >            
             <Greeting nombre="Bakery by Ro" />
           </Route>
+          <CartProvider>
           <Route path='/productos/:id'>
             <ItemDetailContainer item={api} />
           </Route>      
@@ -31,7 +33,7 @@ function App() {
           <Route exact path="/contacto">
             <span className="inner-text">Contacto</span>
           </Route>
-          
+          </CartProvider>          
       </Switch>
     </BrowserRouter>
   );

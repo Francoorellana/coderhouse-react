@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Estilos.css";
 
 export function Contador(props){
-    let [contador, setContador] = useState(props.ini);
+    const [contador, setContador] = useState(props.ini);
 
     let sumar = () => {
         if (contador >= props.max) {
@@ -24,9 +24,14 @@ export function Contador(props){
         };
     }
 
+    useEffect(() => {
+        const newContador = {contador}
+        console.log(newContador)
+    },[contador])    
+
     return (
         <div  >
-        <span  className="contador" onClick={props.funcion(contador)} >{contador}</span>
+        <span  className="contador" onChange={props.newContador} >{contador}</span>
         <button type="button" onClick={restar} >-</button>
         <button type="button" onClick={sumar} >+</button>
         </div>

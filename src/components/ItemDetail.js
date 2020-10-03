@@ -14,15 +14,10 @@ const useStyles = makeStyles({
     },
   });
 
-
-function ItemDetail({ producto }) {
+function ItemDetail({ producto, newContador }) {
     const classes = useStyles();
-    const [contador, setContador] = useState(0);
-
-    function actualizaContador(contador){
-        setContador(contador)
-    }
-    
+    //const [newContador, setnewContador] = useState(0);
+                 
     return (
         <div>
             <Card  >
@@ -31,8 +26,8 @@ function ItemDetail({ producto }) {
                 <h2> {producto.name} </h2>
                 <h3> {producto.detalle} </h3>
                 <h4> {producto.precio} </h4>
-                <Contador ini={0} min={0} max={5} funcion={actualizaContador} />
-                <Button variant="contained" color="primary" onClick={() => alert("Va a comprar este producto")}>Comprar {contador} unidades </Button>                 
+                <Contador ini={0} min={0} max={5}  />
+                <Button variant="contained" color="primary" onClick={() => alert("Va a comprar este producto")} >Comprar {newContador}  unidades </Button>                 
                 </CardContent>                  
             </Card>        
        </div >

@@ -11,12 +11,10 @@ const ItemDetailContainer = (props) => {
     useEffect(() => {
         setCargando(true);
         setTimeout(() => {
-            setItem(props.item[`${id - 1}`]);
-            setCargando(false);
-            
+            setItem(item[`${id - 1}`]);
+            setCargando(false);            
             }, 3000);
     }, []);
-    console.log(item)
 
     if(cargando){
         return <div><CircularProgress /></div>
@@ -28,3 +26,4 @@ const ItemDetailContainer = (props) => {
 }   
 
 export default ItemDetailContainer;
+
